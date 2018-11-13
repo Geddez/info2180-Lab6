@@ -3,10 +3,22 @@
     <head>
         <title>Dictionary</title>
         <script type="text/javascript" src="logic.js"></script>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css" />
     </head>
     <body>
-        <div id= "search">
-            <button type="button" onclick="ajax_request()">Search</button>
+        <div id="header"> Online Web Dictionary</div>
+        <div id= "main">
+            <div id= "search">
+                 <form onsubmit="ajax_request();return false;">
+                    <input type="text" placeholder="ajax" id="search_box"/>
+                    <button type="button" onclick="ajax_request()">Search</button>
+                </form>
+                
+            </div>
+            <span>Results</span>
+            <div id="response">
+                
+            </div>
         </div>
     </body>
 </html>

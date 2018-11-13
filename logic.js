@@ -1,11 +1,12 @@
- function ajax_request() {
+function ajax_request() {
+    var word = document.getElementById("search_box").value.toLowerCase()
      var request = new XMLHttpRequest();
-     let url = "/request.php?q="+"definition"
+     let url = "/request.php?q="+word
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.response);
+                document.getElementById("response").innerHTML = this.responseText;
             }
         };
-       request.open("GET",url,true);
+        request.open("GET",url,true);
         request.send();
 }
